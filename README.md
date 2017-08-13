@@ -1,2 +1,2 @@
-# world-time-widget
+# world-times-widget
 Javascript world times widget 
