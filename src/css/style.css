@@ -20,6 +20,7 @@ a, a:visited, a:hover{
   -webkit-flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: rgb(0,0,0);
   background: rgba(0,0,0,0.8);
 }
 
@@ -47,11 +48,6 @@ a, a:visited, a:hover{
 /*IE fix*/
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .wrapper{
-    padding: 18% 0px;
+    padding: 18% 0;
   }
 }
-
-
-
-
-
