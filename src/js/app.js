@@ -1,6 +1,6 @@
-(function(){
+(()=>{
   'use stric';
-  window.onload =  function(){
+  window.onload =  ()=>{
 
     //Crate canvas constructor
     function getCanvas(city, timeOffset){
@@ -8,14 +8,14 @@
       this.timeOffset = timeOffset;
       this.ctx = this.canvas.getContext("2d"),
       this.radius =  this.canvas.height / 2,
-      this.transl = function(){
+      this.transl = ()=>{
         this.ctx.translate(this.radius, this.radius);
         this.radius = this.radius * 0.90; //Changes this to adjust clock size
       };
     }
     
     //New York time
-    var ny = new getCanvas('new-york', -4);
+    let ny = new getCanvas('new-york', -4);
     ny.transl();
     setInterval(timeNewYork, 1000);
 
@@ -26,7 +26,7 @@
     }
 
     //Berlin time
-    var br = new getCanvas('berlin', 2);
+    let br = new getCanvas('berlin', 2);
     br.transl();
     setInterval(timeBerlin, 1000);
 
@@ -37,7 +37,7 @@
     }
 
     //Moscow time
-    var mc = new getCanvas('moscow', 3);
+    let mc = new getCanvas('moscow', 3);
     mc.transl();
     setInterval(timeMoscow, 1000);
 
@@ -48,7 +48,7 @@
     }
 
     //Sydney time
-    var sd = new getCanvas('sydney', 10);
+    let sd = new getCanvas('sydney', 10);
     sd.transl();
     setInterval(timeSydney, 1000);
 
@@ -75,8 +75,8 @@
 
     //Draw numbers
     function drawNumbers(ctx, radius, city) {
-      var ang;
-      var num;
+      let ang;
+      let num;
       ctx.font = radius*0.13 + "px arial";
       ctx.textBaseline="middle";
       ctx.textAlign="center";
@@ -95,12 +95,12 @@
 
     //Draw time animation
     function drawTime(ctx, radius, city){
-      var time = city;
-      var now  = new Date(new Date().getTime() + new Date().getTimezoneOffset() * 60000 + time * 3600 * 1000);
-      var hour = now.getHours();
-      var minute = now.getMinutes();
-      var second = now.getSeconds();
-      var mid ='';
+      let time = city;
+      let now  = new Date(new Date().getTime() + new Date().getTimezoneOffset() * 60000 + time * 3600 * 1000);
+      let hour = now.getHours();
+      let minute = now.getMinutes();
+      let second = now.getSeconds();
+      let mid ='';
   
       hour > 12 ? mid = 'PM' : mid = 'AM';
       ctx.font = radius*0.18 + "px arial";
