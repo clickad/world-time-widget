@@ -1,7 +1,6 @@
 (()=>{
   'use stric';
   window.onload =  ()=>{
-
     //Crate canvas constructor
     function getCanvas(city, timeOffset){
       this.canvas = document.getElementById(city);
